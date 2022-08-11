@@ -1,0 +1,129 @@
+<body id="all" *ngIf="!DarkState && !Login && !KeepLogin && !isAuthenticated">
+    <mat-toolbar color="primary" class="animate__animated animate__fadeInDown">
+        <span class="head">Book Express</span>
+
+        <span class="spacer"></span>
+        <button mat-raised-button color="black" (click)="ToggleDark()" *ngIf="!DarkState">
+      Theme 2
+    </button>
+        <button mat-raised-button color="accent" (click)="ToggleDark()" *ngIf="DarkState">
+      Theme 1
+    </button>
+
+        <ul>
+            <li>
+                <a mat-button routerLink="/signup">Sign Up</a>
+            </li>
+        </ul>
+    </mat-toolbar>
+    <div class="grider">
+        <div>
+            <!-- <img src="https://static.wixstatic.com/media/2cd43b_31844ce00cf04315a0e69681e3f97740~mv2.png/v1/fill/w_256,h_256,q_90/2cd43b_31844ce00cf04315a0e69681e3f97740~mv2.png" id="img1" class="animate__animated animate__fadeIn" width="300" height="290" *ngIf="!DarkState"
+                (click)="toggleLight(true)" /> -->
+            <img src="http://localhost:3000/images/bulbon.png" id="img1" class="animate__animated animate__fadeIn" width="250" height="340" *ngIf="!DarkState" (click)="toggleLight(true)" />
+            <img src="http://localhost:3000/images/standard-light-bulb.webp" id="img2" class="animate__animated animate__fadeIn" width="300" height="290" *ngIf="!DarkState" (click)="toggleLight(false)" />
+            <p class="click">Click on the Bulb</p>
+        </div>
+        <mat-card class="animate__animated animate__fadeInRight" *ngIf="!DarkState">
+            <div class="loginStyle">Login</div>
+            <div>
+                <br />
+
+                <span class="mat-body-2">Please Enter Your Username and Password</span>
+                <form (submit)="onlogging(postForm)" #postForm="ngForm">
+                    <mat-form-field>
+                        <input matInput type="text" name="username" ngModel #usernameInput="ngModel" required placeholder="Username" />
+                        <mat-error *ngIf="usernameInput.invalid">Please enter a vaild username</mat-error>
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field>
+                        <input matInput type="password" name="password" ngModel #password #passwordInput="ngModel" required placeholder="Password" />
+                        <mat-error *ngIf="passwordInput.invalid">Please enter password</mat-error>
+                    </mat-form-field>
+
+                    <br />
+                    <p class="forget" (click)="forget()">Forget your Username?</p>
+
+                    <button type="submit" mat-raised-button color="primary">Login</button>
+                </form>
+                <br /><br />
+                <p class="warn" *ngIf="wronginput">
+                    Wrong username or password.. Try Again
+                </p>
+            </div>
+        </mat-card>
+    </div>
+</body>
+
+<body style="
+    background-image: url('http://localhost:3000/images/photo-1475274047050-1d0c0975c63e.jpg');
+  " class="all" *ngIf="DarkState && !isAuthenticated">
+    <mat-toolbar color="accent" class="animate__animated animate__fadeInDown">
+        <span class="head">Book Express</span>
+
+        <span class="spacer"></span>
+        <button mat-raised-button color="black" (click)="ToggleDark()" *ngIf="!DarkState">
+      Theme 2
+    </button>
+        <button mat-raised-button color="accent" (click)="ToggleDark()" *ngIf="DarkState">
+      Theme 1
+    </button>
+
+        <ul>
+            <li>
+                <a mat-button routerLink="/signup">Sign Up</a>
+            </li>
+        </ul>
+    </mat-toolbar>
+    <div class="grider">
+        <!-- <img src="https://thumbs.dreamstime.com/b/vector-light-bulb-white-file-eps-format-34983265.jpg" width="300" height="290" *ngIf="DarkState" /> -->
+        <!-- <img src="https://pngimg.com/uploads/bulb/small/bulb_PNG1244.png" width="250" height="260" *ngIf="DarkState" /> -->
+
+        <img src="http://localhost:3000/images/natural-energy-source-the-sun-transparent-photos-3.png" id="img1" class="animate__animated animate__fadeIn" width="300" height="290" *ngIf="DarkState" (click)="toggleLight(true)" />
+        <img src="http://localhost:3000/images/moon_PNG52.png" id="img2" class="animate__animated animate__fadeIn" width="300" height="290" *ngIf="DarkState" (click)="toggleLight(false)" />
+        <mat-card class="animate__animated animate__fadeInRight" *ngIf="DarkState">
+            <div class="loginStyle">Login</div>
+
+            <br />
+
+            <span class="mat-body-2">Please Enter Your Username and Password</span>
+            <form (submit)="onlogging(postForm)" #postForm="ngForm">
+                <mat-form-field>
+                    <input matInput type="text" name="username" ngModel #usernameInput="ngModel" required placeholder="Username" />
+                    <mat-error *ngIf="usernameInput.invalid">Please enter a vaild username</mat-error>
+                </mat-form-field>
+                <br />
+                <mat-form-field>
+                    <input matInput type="password" name="password" ngModel #password #passwordInput="ngModel" required placeholder="Password" />
+                    <mat-error *ngIf="passwordInput.invalid">Please enter password</mat-error>
+                </mat-form-field>
+                <br />
+                <p class="forget" (click)="forget()">Forget your Username?</p>
+
+                <button class="b1" type="submit" mat-raised-button color="accent">
+          Login
+        </button>
+            </form>
+            <br /><br />
+            <p class="warn" *ngIf="wronginput">
+                Wrong username or password.. Try Again
+            </p>
+        </mat-card>
+    </div>
+</body>
+
+<body *ngIf="isAuthenticated">
+    <mat-card class="mat-card1">
+        <div class="confused">You Are Already Logged In!!</div>
+        <img src="http://localhost:3000/images/geek-boy-confused-cartoon-illustration-geeky-little-44146685.jpg" width="300" height="400" />
+        <br />
+        <button class="b1" mat-raised-button color="accent" (click)="gotoStore()">
+      Go to Store
+    </button>
+        <br />
+        <br />
+        <button class="b1" mat-raised-button color="accent" (click)="logout()">
+      LogOut
+    </button>
+    </mat-card>
+</body>

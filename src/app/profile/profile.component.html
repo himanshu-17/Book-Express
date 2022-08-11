@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div class="maincontainer">
+        <div class="leftcontainer">
+            <div>
+                <div class="imgcontainer">
+                    <img src="{{ user.image }}" class="imgformat animate__animated animate__fadeInDown" width="250" height="250" />
+                </div>
+                <div class="hi animate__animated animate__fadeInDown">
+                    Hi,{{ user.username }}
+                </div>
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <mat-card class="cardContainer">
+            <div>
+                <p class="title animate__animated animate__fadeInDown">
+                    Informations
+                </p>
+            </div>
+            <hr />
+            <div class="inlinecontainer">
+                <div class="rowcontainers animate__animated animate__fadeInDown">
+                    <div class="font">Email</div>
+                    <div class="font" id="inform">{{ user.email }}</div>
+                </div>
+                <div class="rowcontainers animate__animated animate__fadeInDown">
+                    <div class="pass">Password</div>
+
+                    <div class="expansion">
+                        <mat-accordion>
+                            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title> Change Password </mat-panel-title>
+                                </mat-expansion-panel-header>
+
+                                <form (submit)="changePassword(passform)" #passform="ngForm">
+                                    <mat-form-field>
+                                        <input matInput type="text" required name="password3" ngModel placeholder="Current Password" #password3="ngModel" />
+                                        <mat-error *ngIf="password3.invalid">Please enter your current password</mat-error>
+                                    </mat-form-field>
+                                    <br />
+                                    <mat-form-field>
+                                        <input matInput type="text" required name="password1" ngModel placeholder="New Password" #password="ngModel" />
+                                        <mat-error *ngIf="password.invalid">Please enter your password</mat-error>
+                                    </mat-form-field>
+                                    <br />
+                                    <mat-form-field>
+                                        <input matInput type="text" required name="password2" ngModel placeholder="Confirm New Password" #confirm="ngModel" />
+                                        <mat-error *ngIf="confirm.invalid">Please confirm your password</mat-error>
+                                    </mat-form-field>
+                                    <br />
+                                    <button id="btn" mat-raised-button type="submit">
+                      Apply
+                    </button>
+                                    <div *ngIf="!matching">
+                                        <br />
+                                        <br />
+                                        <p class="alert1">The passwords don't match</p>
+                                    </div>
+                                </form>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                    <p class="warning" *ngIf="passchanged && !passchangingfailed">
+                        Password changed successfully
+                    </p>
+                    <p class="warning" *ngIf="passchangingfailed && !passchanged">
+                        You entered a wrong password
+                    </p>
+                </div>
+            </div>
+            <div class="margintop inlinecontainer">
+                <div class="rowcontainers animate__animated animate__fadeInDown">
+                    <div class="font">Username</div>
+                    <div class="font" id="inform">{{ user.username }}</div>
+                </div>
+
+                <div class="pass2 rowcontainers animate__animated animate__fadeInDown">
+                    <div class="font">Mobile</div>
+                    <div class="font" id="inform">{{ user.mobile }}</div>
+                </div>
+                <div class="pass2 rowcontainers animate__animated animate__fadeInDown">
+                    <div class="font">Government</div>
+                    <div class="font" id="inform">{{ user.gover }}</div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</body>
+
+</html>

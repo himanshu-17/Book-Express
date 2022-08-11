@@ -1,0 +1,29 @@
+<mat-card>
+    <div class="forgrow">
+        <div class="forgcol">
+            <p class="header">
+                If you forget your username just enter your email and we will sent to it
+            </p>
+            <div>
+                <form (submit)="forget(forgetForm)" #forgetForm="ngForm">
+                    <mat-form-field>
+                        <p>Enter Your Email</p>
+                        <input matInput type="text" name="email" required email ngModel #email="ngModel" />
+                        <mat-error *ngIf="email.invalid">
+                            Please enter your email</mat-error>
+                    </mat-form-field>
+
+                    <br />
+                    <button mat-button type="submit">Send</button>
+                </form>
+                <p class="warn" *ngIf="sent && !error">Email Sent</p>
+                <p class="warn" *ngIf="error && !sent">
+                    An error occured or email not found
+                </p>
+            </div>
+        </div>
+        <div>
+            <img src="http://localhost:3000/images/4-48541_this-free-icons-png-design-of-young-businessman-removebg-preview.png" width="400" height="400" />
+        </div>
+    </div>
+</mat-card>

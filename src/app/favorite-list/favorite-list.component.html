@@ -1,0 +1,25 @@
+<app-search-tool-bar></app-search-tool-bar>
+
+<mat-card>
+    <div>
+        <img class="animate__animated animate__rollIn" src="https://freepngimg.com/thumb/star/4-star-png-image-thumb.png" width="100" height="100" />
+        <span class="list animate__animated animate__fadeIn">My Favorite List</span>
+    </div>
+</mat-card>
+<br />
+<div class="maincontainer">
+    <div *ngFor="let book of favBooks">
+        <mat-card class="animate__animated animate__pulse" *ngIf="book.Stock !== 0">
+            <img src="{{ book.Cover }}" width="370" height="400" />
+            <div class="author-tinfor">
+                <span class="title">Title: {{ book.Title }}</span>
+                <span class="author">Author: {{ book.Author }}</span>
+            </div>
+            <div class="author-tinfor">
+                <span class="price">Price: {{ book.Price }} EGP</span>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<br /><br /><br />
+<app-footer></app-footer>

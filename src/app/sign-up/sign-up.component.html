@@ -1,0 +1,226 @@
+<body class="all" *ngIf="!DarkState && !isAuthenticated">
+    <mat-toolbar color="primary" class="animate__animated animate__fadeInDown">
+        <span class="head">Book Express</span>
+
+        <span class="spacer"></span>
+        <button mat-raised-button color="black" (click)="ToggleDark()" *ngIf="!DarkState">
+      Theme 2
+    </button>
+        <button mat-raised-button color="accent" (click)="ToggleDark()" *ngIf="DarkState">
+      Theme 1
+    </button>
+
+        <ul>
+            <li>
+                <a mat-button routerLink="/">Login</a>
+            </li>
+        </ul>
+    </mat-toolbar>
+    <div class="grider">
+        <img src="https://images.twinkl.co.uk/tr/image/upload/t_illustration/illustation/Boy-Reading-a-Book-Reflection-of-Light.png" class="animate__animated animate__fadeInLeft" width="500" height="400" *ngIf="!DarkState" />
+        <mat-card class="animate__animated animate__fadeInRight" *ngIf="!DarkState">
+            <div class="signupStyle">SignUp</div>
+            <br />
+
+            <!-- <span class="mat-body-2">You Must Sign Up First</span> -->
+            <div class="outergrid">
+                <div>
+                    <br />
+
+                    <span class="mat-body-2">Please Enter Your Informations</span>
+                    <form [formGroup]="form" (submit)="onSignup()">
+                        <div>
+                            <mat-form-field>
+                                <input matInput type="text" formControlName="username" placeholder="Username" />
+                                <mat-error *ngIf="form.get('username')!.invalid">Please enter a vaild username</mat-error>
+                            </mat-form-field>
+                            <br />
+                            <mat-form-field>
+                                <input matInput type="text" formControlName="email" placeholder="Email" />
+                                <mat-error *ngIf="form.get('email')!.invalid">Please enter a vaild email</mat-error>
+                            </mat-form-field>
+                            <br />
+
+                            <mat-form-field>
+                                <input matInput type="password" formControlName="password" placeholder="Password" />
+                                <mat-error *ngIf="form.get('password')!.invalid">Please enter a long password</mat-error>
+                            </mat-form-field>
+
+                            <br />
+                            <button type="submit" mat-raised-button color="primary">
+                SignUp
+              </button>
+                        </div>
+                        <div class="right">
+                            <mat-form-field>
+                                <input matInput type="number" formControlName="mobile" placeholder="Mobile Phone" />
+                                <mat-error *ngIf="form.get('mobile')!.invalid">Please enter a 10-digit mobile phone</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Select your government</mat-label>
+                                <mat-select [(value)]="selected">
+                                    <mat-option value="Alexandria">Alexandria</mat-option>
+                                    <mat-option value="Aswan ">Aswan</mat-option>
+                                    <mat-option value="Asyut">Asyut</mat-option>
+                                    <mat-option value="Beni Suef">Beni Suef</mat-option>
+                                    <mat-option value="Cairo">Cairo</mat-option>
+                                    <mat-option value="Dakahlia">Dakahlia</mat-option>
+                                    <mat-option value="Damietta">Damietta</mat-option>
+                                    <mat-option value="Faiyum">Faiyum</mat-option>
+                                    <mat-option value="Giza">Giza</mat-option>
+                                    <mat-option value="Ismailia">Ismailia</mat-option>
+                                    <mat-option value="Kafr El Sheikh">Kafr El Sheikh</mat-option>
+                                    <mat-option value="Luxor">Luxor</mat-option>
+                                    <mat-option value="Matruh">Matruh</mat-option>
+                                    <mat-option value="Monufia">Monufia</mat-option>
+                                    <mat-option value="Port Said">Port Said</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <p class="alert" *ngIf="selectionAlert">
+                                Please enter a government
+                            </p>
+                        </div>
+                    </form>
+                    <br /><br /><br />
+                </div>
+                <!-- image starts -->
+                <div class="image-preview2" *ngIf="!imagePreview">
+                    <img src="http://localhost:3000/images/Profile_avatar_placeholder_large.png" />
+                </div>
+                <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview">
+                    <img [src]="imagePreview" />
+                </div>
+
+                <button class="b3" mat-mini-fab color="primary" type="button" (click)="filePicker.click()" aria-label="Example icon button with a menu icon">
+          <mat-icon>camera_enhance</mat-icon>
+        </button>
+                <input type="file" #filePicker (change)="onImagePicked($event)" />
+
+                <!--image ends-->
+            </div>
+            <br /><br /><br />
+        </mat-card>
+    </div>
+</body>
+
+<body style="background-color: black" class="all" *ngIf="DarkState && !isAuthenticated">
+    <mat-toolbar color="accent" class="animate__animated animate__fadeInDown">
+        <span>Book Express</span>
+
+        <span class="spacer"></span>
+        <button mat-raised-button color="black" (click)="ToggleDark()" *ngIf="!DarkState">
+      Theme 2
+    </button>
+        <button mat-raised-button color="accent" (click)="ToggleDark()" *ngIf="DarkState">
+      Theme 1
+    </button>
+
+        <ul>
+            <li>
+                <a mat-button routerLink="/">Login</a>
+            </li>
+        </ul>
+    </mat-toolbar>
+    <div class="grider">
+        <img src="https://www.savepng.com/file/thumb/2020-06/78295-light-sun-glory-golden-png-free-photo-thumb.png" class="animate__animated animate__fadeInLeft" width="430" height="430" *ngIf="DarkState" />
+
+        <mat-card class="animate__animated animate__fadeInRight" *ngIf="DarkState">
+            <div class="signupStyle">SignUp</div>
+            <br />
+
+            <!-- <span class="mat-body-2">You Must Sign Up First</span> -->
+            <div class="outergrid">
+                <div>
+                    <br />
+
+                    <span class="mat-body-2">Please Enter Your Informations</span>
+                    <form [formGroup]="form" (submit)="onSignup()">
+                        <div>
+                            <mat-form-field>
+                                <input matInput type="text" formControlName="username" placeholder="Username" />
+                                <mat-error *ngIf="form.get('username')!.invalid">Please enter a vaild username</mat-error>
+                            </mat-form-field>
+                            <br />
+                            <mat-form-field>
+                                <input matInput type="text" formControlName="email" placeholder="Email" />
+                                <mat-error *ngIf="form.get('email')!.invalid">Please enter a vaild email</mat-error>
+                            </mat-form-field>
+                            <br />
+
+                            <mat-form-field>
+                                <input matInput type="password" formControlName="password" placeholder="Password" />
+                                <mat-error *ngIf="form.get('password')!.invalid">Please enter a long password</mat-error>
+                            </mat-form-field>
+
+                            <br />
+                            <button type="submit" mat-raised-button color="accent">
+                SignUp
+              </button>
+                        </div>
+                        <div class="right">
+                            <mat-form-field>
+                                <input matInput type="number" formControlName="mobile" placeholder="Mobile Phone" />
+                                <mat-error *ngIf="form.get('mobile')!.invalid">Please enter a 10-digit mobile phone</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Select your government</mat-label>
+                                <mat-select [(value)]="selected">
+                                    <mat-option value="Alexandria">Alexandria</mat-option>
+                                    <mat-option value="Aswan ">Aswan</mat-option>
+                                    <mat-option value="Asyut">Asyut</mat-option>
+                                    <mat-option value="Beni Suef">Beni Suef</mat-option>
+                                    <mat-option value="Cairo">Cairo</mat-option>
+                                    <mat-option value="Dakahlia">Dakahlia</mat-option>
+                                    <mat-option value="Damietta">Damietta</mat-option>
+                                    <mat-option value="Faiyum">Faiyum</mat-option>
+                                    <mat-option value="Giza">Giza</mat-option>
+                                    <mat-option value="Ismailia">Ismailia</mat-option>
+                                    <mat-option value="Kafr El Sheikh">Kafr El Sheikh</mat-option>
+                                    <mat-option value="Luxor">Luxor</mat-option>
+                                    <mat-option value="Matruh">Matruh</mat-option>
+                                    <mat-option value="Monufia">Monufia</mat-option>
+                                    <mat-option value="Port Said">Port Said</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <p class="alert" *ngIf="selectionAlert">
+                                Please enter a government
+                            </p>
+                        </div>
+                    </form>
+                    <br /><br /><br />
+                </div>
+                <!-- image starts -->
+                <div class="image-preview2" *ngIf="!imagePreview">
+                    <img src="http://localhost:3000/images/Profile_avatar_placeholder_large.png" />
+                </div>
+                <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview">
+                    <img [src]="imagePreview" />
+                </div>
+
+                <button class="b3" mat-mini-fab color="primary" type="button" (click)="filePicker.click()" aria-label="Example icon button with a menu icon">
+          <mat-icon>camera_enhance</mat-icon>
+        </button>
+                <input type="file" #filePicker (change)="onImagePicked($event)" />
+
+                <!--image ends-->
+            </div>
+            <br /><br /><br />
+        </mat-card>
+    </div>
+</body>
+
+<body *ngIf="isAuthenticated">
+    <mat-card class="mat-card1">
+        <div class="confused">You Are Already Logged In!!</div>
+        <img src="https://thumbs.dreamstime.com/z/geek-boy-confused-cartoon-illustration-geeky-little-44146685.jpg" width="300" height="400" />
+        <br />
+        <button class="b1" mat-raised-button color="accent" (click)="gotoStore()">
+      Go to Store
+    </button>
+        <br />
+        <br />
+        <button class="b1" mat-raised-button color="accent" (click)="logout()">
+      LogOut
+    </button>
+    </mat-card>
+</body>

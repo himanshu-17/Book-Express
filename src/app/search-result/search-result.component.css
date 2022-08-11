@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Righteous&display=swap");
+.example-container {
+    width: 10px;
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-sidenav {
+    height: 100%;
+    padding: 20px;
+    margin-top: 4.5em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.head {
+    margin-left: 20%;
+}
+
+.sider {
+    display: grid;
+    flex-direction: row;
+}
+
+.innergrid {
+    display: grid;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.title {
+    font-size: 30px;
+    font-family: "Righteous", cursive;
+    color: white;
+}
+
+.author {
+    font-size: 20px;
+    font-family: "Righteous", cursive;
+    color: white;
+}
+
+.price {
+    font-size: 20px;
+    font-family: "Righteous", cursive;
+    color: white;
+}
+
+.search {
+    margin-left: 1em;
+}
+
+.searchbutton {
+    margin-left: 1em;
+}
+
+.b1 {
+    color: crimson;
+}
+
+.spacer1 {
+    margin-left: 1em;
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+}
+
+
+/* new */
+
+.title {
+    font-size: 34px;
+    font-family: "Righteous", cursive;
+    /* color: #86c232; */
+    color: #ea7166;
+}
+
+.author {
+    font-size: 20px;
+    font-family: "Righteous", cursive;
+    color: #86c232;
+    font-weight: 500;
+}
+
+.price {
+    font-size: 15px;
+    font-family: "Righteous", cursive;
+    color: #86c232;
+}
+
+#card1 {
+    background-color: rgb(161, 170, 175);
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+
+.stock {
+    color: white;
+    font-size: 15px;
+}
+
+#imgpost {
+    align-items: center;
+}
+
+.innergrid {
+    display: grid;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.container {
+    width: 400px;
+    align-items: center;
+}
+
+.notfound {
+    font-size: 30px;
+    color: #ea7166;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.div2 {
+    margin-left: 30em;
+    width: 370px;
+}
+
+mat-card {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    /* background: #222629; */
+    background: #25395c;
+    width: 400px;
+    margin-left: 35%;
+    margin-top: -100px;
+}
+
+.author-tinfor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.stock {
+    color: #86c232;
+    font-size: 15px;
+    animation: rotate 3s infinite;
+}

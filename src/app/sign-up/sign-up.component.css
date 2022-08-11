@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+mat-form-field,
+input {
+    width: 100%;
+    padding-left: 0%;
+}
+
+.mat-card {
+    margin-top: 1em;
+    width: 50%;
+    /* margin-left: 25%; */
+    text-align: center;
+    height: 500px;
+}
+
+.outergrid {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.head {
+    font-family: "Lobster", cursive;
+    font-size: 30px;
+}
+
+.darktoolbar {
+    color: white;
+}
+
+.grider {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.signupStyle {
+    font-family: "Lobster", cursive;
+    font-size: 40px;
+    color: indianred;
+}
+
+.confused {
+    font-family: "Lobster", cursive;
+    font-size: 30px;
+    color: indianred;
+}
+
+.mat-card1 {
+    margin-top: 1em;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    height: max-content;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+.right mat-form-field {
+    width: 200px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    margin-left: 30px;
+}
+
+.alert {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: red;
+}
+
+.image-preview img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.image-preview2 img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+input[type="file"] {
+    visibility: hidden;
+}
+
+.b3 {
+    background: royalblue;
+    color: white;
+    position: relative;
+    top: 100px;
+    right: 140px;
+}

@@ -1,0 +1,28 @@
+<app-search-tool-bar></app-search-tool-bar>
+
+<mat-card class="griding animate__animated animate__fadeInDown"><span class="confused">Your Cost: {{ price }} L.E</span>
+    <br />
+    <button mat-raised-button color="accent" (click)="checkout()" class="animate__animated animate__slideInLeft">
+    <mat-icon>payment</mat-icon>
+
+    CheckOut
+  </button>
+</mat-card>
+<div class="maincontainer">
+    <div *ngFor="let book of books">
+        <mat-card class="animate__animated animate__pulse" *ngIf="book.Stock !== 0">
+            <img src="{{ book.Cover }}" width="370" height="400" />
+            <div class="author-tinfor">
+                <span class="title">Title: {{ book.Title }}</span>
+                <span class="author">Author: {{ book.Author }}</span>
+            </div>
+            <div class="author-tinfor">
+                <span class="price">Price: {{ book.Price }} EGP</span>
+                <span class="stock">Stock: {{ book.Stock }}</span>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+<br /><br /><br />
+<app-footer></app-footer>
